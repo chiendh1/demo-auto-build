@@ -1,0 +1,558 @@
+const strings = {
+    onboarding: {
+        welcome: {
+            heading: 'Welcome',
+        },
+        welcome1: {
+            button: 'Login'
+        },
+    },
+
+    start: {
+        hint_text_swiper1: "Vận chuyển nhanh chóng",
+        hint_text_swiper2: "Tiết kiệm chi phí",
+        hint_text_swiper3: "Thương hiệu uy tín",
+        lable_get_start: "Bắt đầu ngay",
+        hint_text_or: "Hoặc"
+
+    },
+    login: {
+        hint_phone_number: 'Nhập số điện thoại',
+        hint_password: 'Mật khẩu',
+        label_login: 'Đăng nhập',
+        label_sign_up: 'Đăng ký',
+        label_logout: 'Đăng xuất',
+        label_forgot_password: 'Quên mật khẩu?',
+        label_sign_in_with: 'Đăng nhập bằng'
+    },
+
+    signup: {
+        hint_full_name: 'Họ và tên',
+        hint_phone_number: 'Nhập số điện thoại',
+        hint_password: 'Nhập mật khẩu',
+        hint_confirm_password: 'Nhập lại mật khẩu',
+        hint_invitation_code: 'Nhập mã giới thiệu',
+        hint_next_steep: 'Bước tiếp theo',
+        hint_yes_account: 'Tôi đã có tài khoản',
+        hint_done_singup: 'Hoàn tất đăng ký'
+    },
+    forpassword: {
+        hint_text_input_number: 'Nhập số điện thoại đăng ký',
+        hint_text_send_code: 'Gửi mã xác nhận',
+        hint_text_input_password: 'Nhập mật khẩu mới',
+        hint_text_reinput_password: 'Nhập lại mật khẩu mới',
+        hint_text_confirm_create_password: 'Xác nhận và tạo mật khẩu mới',
+        hint_text_next_steep: 'Tiếp tục',
+        phone_number_is_exist: 'Số điện thoại đã tồn tại',
+        phone_number_already_login_social: 'Số điện thoại đã dùng để đăng nhập bằng Faceboook hoặc Google trước đó.',
+        title_show_alert: 'Thông báo',
+    },
+    validatenumber: {
+        hint_text_recevie_code: 'Nhận mã xác nhận',
+        hint_text_input_code: 'Nhập mã xác nhận',
+        hint_text_resend_code: 'Gửi lại mã xác nhận',
+        hint_text_resend_code_in: 'Gửi lại mã xác nhận trong',
+        hint_text_next_steep: 'Bước tiếp theo',
+        hint_text_no_input_code: 'Mã xác nhận không được để trống'
+    },
+
+    qrscranner: {
+
+    },
+
+    header: {
+        hint_text_signup: 'Đăng ký tài khoản',
+        hine_text_validatenumber: 'Nhập mã xác nhận để tiếp tục',
+        hint_text_qrscranner: 'Quét mã QR',
+        hint_full_name: 'Nhập họ tên',
+        hint_phone_number: 'Nhập số điện thoại',
+        hint_password: 'Nhập mật khẩu',
+        hint_confirm_password: 'Nhập lại mật khẩu',
+        hint_invitation_code: 'Mã giới thiệu',
+        hint_forgot_password: 'Quên mật khẩu',
+        title_update_phone: 'Cập nhật SĐT',
+        hint_create_password: 'Tạo mật khẩu mới',
+        hint_upgrade_acc: 'Nâng cấp tài khoản',
+        hint_select_serviec: 'Lựa chọn dịch vụ',
+        hint_student_ecruitment: 'Đăng tuyển sinh viên',
+        hint_artisan_ecruitment: 'Đăng tin tuyển thợ',
+        hint_list_news_recruiment: 'Tin tuyển dụng của tôi',
+        hint_search_filter: 'Bộ lọc tìm kiếm',
+        hint_edit_new_student: 'Sửa tin tuyển sinh viên',
+        hint_edit_new_artisa: 'Sửa tin tuyển thợ',
+        hint_text_my_feedback: 'Đánh giá của tôi'
+    },
+
+    main: {
+        hint_text_detail_mess: 'Chi tiết',
+        hint_text_upgrade_mess: 'Nâng cấp'
+    },
+    upgradeacc: {
+        hint_text_start: 'Được phép nhận dịch vụ',
+        hint_text_username: 'Họ và tên',
+        hint_title_address: 'Địa chỉ',
+        hint_title_img_cmnd: 'Ảnh 2 mặt CMND',
+        hitn_title_img_khohang: 'Ảnh nhà xưởng kho hàng hóa',
+        hint_title_img_sv: 'Ảnh bằng cấp hoặc thẻ sinh viên',
+        hint_text_input_cmnd: 'Số chứng minh thư',
+        hint_text_btn_done: 'Lựa chọn dịch vụ',
+        hint_progress_upload: 'Đang upload',
+        text_you_update_acc: 'Bạn phải nâng cấp tài khoản lên 1 sao để sử dụng tính năng này',
+        text_upgrade_err: 'Nâng cấp tài khoản thất bại'
+    },
+    validate: {
+        msg_empty_fullname: 'Họ tên không được để trống',
+        msg_empty_fullname_special: 'Họ tên không được nhập ký tự đặc biệt',
+        msg_not_fullname_special: 'Họ tên tối thiểu có 1 ký tự là chữ',
+        msg_empty_fullname_space: 'Họ tên không được nhập toàn khoảng trắng',
+        msg_length_fullname_invalid: 'Tối thiểu 2 ký tự',
+        msg_phone_exist: 'Số điện thoại đã tồn tại',
+        msg_empty_phone: 'Số điện thoại không được để trống',
+        msg_phone_short: 'Số điện thoại ít hơn 10 ký tự',
+        msg_phone_length: 'Số điện thoại quá 12 ký tự',
+        msg_phone_validate: 'Số điện thoại không đúng định dạng',
+        msg_empty_password: 'Mật khẩu không được để trống',
+        msg_length_password_invalid: 'Mật khẩu tối thiểu 6 ký tự',
+        msg_generic_error: 'Đã xảy ra lỗi máy chủ. Vui lòng thử lại sau!',
+        msg_password_incorrect: 'Mật khẩu của bạn chưa chính xác',
+        msg_new_password_empty: 'Vui lòng nhập mật khẩu mới',
+        msg_password_not_match: 'Mật khẩu không trùng khớp',
+        msg_change_password_success: 'Mật khẩu của bạn đã được thay đổi thành công',
+        msg_login_failed: 'Đăng nhập không thành công!',
+        msg_phone_is_not_exist: 'Số điện thoại không tồn tại',
+        msg_cannot_change_password: 'Không thể đổi mật khẩu. Vui lòng thử lại sau',
+        msg_phone_error: 'Sai số điện thoại hoặc mật khẩu. Vui lòng thử lại ',
+        msg_not_working: 'Lỗi kết nối mạng',
+        msg_password_space: 'Mật khẩu không được đặt toàn khoảng trống',
+        msg_provinces_space: 'Bạn phải chọn địa chỉ',
+        msg_district_space: 'Quận/Huyện không được để trống',
+        msg_ward_space: 'Xã/Phường không được để trống',
+        msg_cmnd: 'Chứng minh nhân dân không được để trống',
+        msg_img_cmnd: 'Bạn phải upload ảnh chứng minh nhân dân',
+        msg_img_2_cmnd: 'Bạn phải upload cả 2 mặt của chứng minh nhân dân',
+        msg_text_qr_short: 'Mã giới thiệu ít hơn 8 ký tự',
+        msg_service_1: 'Bạn phải chọn dịch vụ',
+        msg_service_2: 'Bạn phải chọn dịch vụ 2',
+        msg_text_cmnd: 'Số CMT tối thiểu 9 số, tối đa 15 số',
+        msg_upload_image_error: "Lỗi upload ảnh",
+        msg_input_introduce: 'Mã giới thiệu không được để trống',
+        msg_img_sv: 'Bạn phải upload tối thiểu 1 ảnh bằng cấp hoặc thẻ sinh viên',
+        msg_img_nx: 'Bạn phải upload tối thiểu 1 ảnh nhà xưởng kho hàng hóa',
+    },
+    loadingPage: {
+        msg_loading_page: 'Loading...'
+    },
+    Introduce: {
+        text_introduce: (point) => { return `Tặng ngay ${point} điểm cho mỗi lượt giới thiệu` },
+        text_QR: 'Quét mã QR',
+        text_your_code: 'Mã của bạn',
+        text_share_code: 'Chia sẻ mã giới thiệu',
+        text_input_code_friends: (point) => { return `Nhập mã giới thiệu từ bạn bè và người thân để cả 2 cùng nhận ${point} điểm thưởng.` },
+        text_input_code: 'Nhập mã giới thiệu',
+        text_introduce_friend: 'Giới thiệu bạn bè',
+        msg_code_does_not_exist: 'Mã giới thiệu bạn nhập chưa đúng',
+        msg_not_enter_your_code: 'Bạn không thể nhập mã giới thiệu của chính mình',
+        msg_introduce_success: (point) => { return `Chúc mừng bạn đã nhận được ${point} điểm thưởng.` },
+        text_button: 'Hoàn tất',
+        msg_multi_click_code: 'Bạn đã có mã giới thiệu'
+    },
+    discoutCode: {
+        text_discount_code: 'MÃ GIẢM GIÁ CỦA TÔI',
+        text_input_discount_code: 'Nhập mã giảm giá',
+        text_header_voucher: 'Đổi thưởng',
+        text_header_discount_code: 'Mã giảm giá của tôi',
+        text_input_code: 'Nhập mã giới thiệu',
+        text_button: 'Dùng ngay',
+        text_HSD: 'HSD',
+        text_day_use: 'Ngày đổi:',
+        text_button_save: 'Lưu',
+        text_content_dealine: 'Có hiệu lực',
+        text_content_des: 'Thể lệ',
+        text_remaining: 'Còn lại',
+        text_partner: 'Đối tác',
+        text_change: 'Đổi',
+        text_voucher_relocation: 'Số lượng còn lại',
+        text_date_end: 'Hạn sử dụng',
+        text_change_voucher: 'Đổi',
+        text_get_code_voucher: 'điểm lấy Mã giảm giá',
+        text_voucher_discount_partner: 'Mã giảm giá từ đối tác'
+    },
+
+    requireSignIn: {
+        text_havent_login: 'Vui lòng login để sử dụng tính năng này',
+        sign_in: 'Đăng nhập',
+    },
+    requireIntroduce: {
+        text_havent_introduces: 'Không có chương trình khuyến mãi nào',
+        text_discode_introduces: 'Bạn không có mã giảm giá nào',
+    },
+
+    common: {
+        no_internet_connection: 'Không có kết nối internet!',
+        token_invalid: 'Phiên đăng nhập hết hạn. Vui lòng đăng nhập lại!',
+    },
+
+    selectService: {
+        header_select_service: 'Mỗi tài khoản được lựa chọn cung cấp tối đa 2 dịch vụ',
+        hint_signin_done: 'Đăng ký thành công \n \ Chờ xác nhận từ hệ thống',
+        hint_noti_signin: 'Tài khoản của bạn sẽ được nâng cấp lên thành 1 sao sau khi nhận được hệ thống xác nhận thành công. Với tài khoản 1 sao bạn sẽ nhận được thông báo từ hệ thống khi có đơn hàng mới mỗi ngày.',
+        hint_service_0: 'Dịch vụ',
+        hint_service_1: 'Dịch vụ 1',
+        hint_service_2: 'Dịch vụ 2',
+        hint_career: 'Ngành nghề',
+        hint_specialize: 'Chuyên môn của bạn',
+        hint_estimated_price: 'Khoảng giá dự tính',
+        hint_placeholder_seacher: 'Tìm kiếm',
+        btn_done: 'Hoàn tất đăng ký',
+        btn_have_understand: 'Tôi đã hiểu',
+        btn_see_benefits: 'Xem quyền lợi',
+        hint_no_service: 'Không có kết quả tìm kiếm',
+        hint_add_service: 'Thêm dịch vụ',
+        
+    },
+
+    notification: {
+        btn_continue: 'Tiếp tục',
+        btn_see_rights: 'Xem quyền lợi',
+        hint_noti_title: 'Chúc mừng bạn đã nâng cấp thành công lên 1 sao!',
+        hint_noti_content: 'Tài khoản của bạn đã nâng cấp thành công lên thành 1 sao. Với tài khoản 1 sao bạn sẽ nhận được thông báo từ hệ thống khi có đơn hàng mới',
+        text_news_reset: 'Làm mới tin tuyển dụng',
+        text_profiles_reset: 'Làm mới hồ sơ',
+        text_news_btn: 'Làm mới',
+        text_news_reset_content: 'Tính năng này sẽ giúp bài đăng của bạn được đẩy lên vị trí đầu tiên trên trang tuyển dụng.',
+        text_change_news: 'Thay đổi thông tin bài đăng',
+        text_change_news_content: 'Nếu bài đăng của bạn chưa tiếp cận được nhiều người, hãy cải thiện bài đăng bằng cách: Mô tả công việc chi tiết hơn, thêm các chế độ mà thợ có thể nhận được việc khi làm việc với xưởng/công ty của bạn...',
+        text_change_profiles_content: 'Nếu bài đăng của bạn chưa tiếp cận được nhiều người, hãy cải thiện bài đăng bằng cách cập nhật hồ sơ chi tiết hơn',
+        text_change_news_btn: 'Thay đổi',
+        text_update_job_done: 'Cập nhập tin tuyển dụng thành công',
+        text_update_profile_done: 'Cập nhập hồ sơ thành công',
+        text_update_job_err: 'Cập nhập tin tuyển dụng thất bại',
+        text_update_profile_err: 'Cập nhập hồ sơ thất bại',
+        text_you_find_content: 'Bạn đã tìm được hồ sơ mong muốn chưa? Có một số hồ sơ gần đây phù hợp với yêu câu của bạn!',
+        text_recuiment_find_content: 'Bạn đã tìm được thông tin tuyển dụng mong muốn chưa? Có một số thông tin tuyển dụng gần đây phù hợp với yêu câu của bạn!',
+        btn_you_find_done: 'Đã tìm được',
+        btn_you_call_done: 'Đã liên hệ',
+        btn_you_call_failed: 'Chưa liên hệ',
+        btn_you_find_no: ' Chưa tìm được',
+        text_thanks: 'Cảm ơn bạn đã tin tưởng và sử dụng \n \ LimberNow',
+        text_noti_missing_profile: 'Hoàn thành đầy đủ chi tiết hồ sơ sẽ gây ấn tượng mạnh mẽ đến nhà tuyển dụng và giúp bạn sớm tìm được việc làm mong muốn.'
+    },
+
+    recruitment: {
+        job_for_student: 'Việc sinh viên',
+        student_find_job: 'SV tìm việc',
+        worker_find_job: 'Thợ tìm việc',
+        job_for_worker: 'Việc cho thợ',
+        map_job: 'Map công việc',
+
+        worker: {
+            save_job: 'Lưu việc',
+            remove_job: 'Bỏ lưu việc',
+            save_portfolio: 'Lưu hồ sơ',
+            remove_portfolio: 'Bỏ lưu hồ sơ',
+            share: 'Chia sẻ',
+            call_now: 'Gọi ngay',
+            find_a_job: 'Tìm kiếm'
+        }
+    },
+    role: {
+        text_info_person: 'Khách'
+    },
+    voucher: {
+        text_header_info_voucher: 'Thông tin Voucher',
+        text_date: 'Thời gian sử dụng:',
+        msg_change_voucher_success: 'Chúc mừng bạn đổi mã giảm giá thành công',
+        msg_point_not_enought: 'Bạn chưa có đủ điểm để đổi mã giảm giá',
+        msg_voucher_expired: 'Số lượng mã giảm giá đã hết',
+        msg_date_voucher_expiry: 'Mã giảm giá đã hết hạn',
+    },
+    detailStar: {
+        text_header: 'Hệ thống đánh giá 5 sao',
+        text_request: 'Yêu cầu:',
+        text_right: 'Quyền lợi:',
+        text_star: 'Sao',
+        text_discount: 'Mã giảm giá',
+        text_detail_star: 'Xem quyền lợi',
+        text_header_edit_profile: 'Thông tin cá nhân',
+    },
+
+    createStudentPortfolio: {
+        label_create_portfolio: 'Tạo hồ sơ sinh viên',
+        label_edit_portfolio: 'Cập nhật hồ sơ sinh viên',
+        position_expected: 'Vị trí mong muốn',
+        current_position: 'Cấp bậc hiện tại',
+        level_expected: 'Cấp bậc mong muốn',
+        career_expected: 'Ngành nghề mong muốn',
+        working_location: 'Địa điểm làm việc',
+        working_experenced: 'Số năm kinh nghiệm',
+        salary_expected: 'Mức lương mong muốn (ngày)',
+        post_portfolio: 'Đăng hồ sơ',
+        edit_portfolio: 'Cập nhật hồ sơ',
+        text_money: 'đ',
+        msg_empty_place: 'Chỗ làm việc hiện tại không được để trống',
+        msg_empty_place1: 'Nơi làm việc mong muốn không được để trống',
+        msg_empty_desired_trades: 'Ngành nghề mong muốn không được để trống',
+        msg_empty_specialize: 'Chuyên môn không được để trống',
+        msg_empty_position: 'Vị trí mong muốn không được để trống',
+        msg_empty_desired_salary: 'Mức lương mong muốn không được để trống',
+        msg_empty_desired_salary_length: 'Mức lương mong muốn tối đa 7 ký tự',
+        msg_not_desired_salary: 'Mức lương mong muốn tối đa là 2.000.000đ',
+        msg_not_current_salary: 'Mức lương hiện tại tối đa là 2.000.000đ',
+        msg_empty_current_salary: 'Mức lương hiện tại không được để trống',
+        msg_empty_current_salary_length: 'Mức lương hiện tại lớn hơn 7 ký tự',
+        msg_image_product: 'Hình ảnh sản phẩm không được để trống',
+        msg_image_favorite: 'Hình ảnh sản phẩm sở trường không được để trống',
+        msg_image_drawing: 'Hình ảnh bản vẽ kỹ thuật không được để trống',
+        msg_skill: 'Kỹ năng sở trường không được để trống',
+        msg_skill_length: 'Kỹ năng sở trường tối thiểu 100 ký tự',
+        text_placeholder_disared_salary: 'Mức lương từ 100.000đ -> 2.000.000đ'
+    },
+
+    selectWorkerPortfolio: {
+        title_dialog_select_portfolio: 'Chọn loại hồ sơ',
+        title_basic_portfolio: 'Hồ sơ cơ bản',
+        desc1_basic_portfolio: '- Dành cho thợ thông thường',
+        desc2_basic_portfolio: '- Lương: 180k/ngày - 350k/ngày',
+        title_advanced_portfolio: 'Hồ sơ nâng cao',
+        desc1_advanced_portfolio: '- Dành cho Tổ trưởng, Quản lý, Phụ trách kỹ thuật',
+        desc2_advanced_portfolio: '- Lương: 350k/ngày - 650k/ngày',
+        msg_create_profile_success: 'Tạo hồ sơ thành công',
+        msg_edit_profile_success: 'Cập nhật hồ sơ thành công',
+    },
+    conctact: {
+        text_point: 'điểm',
+        text_invoice_successfully: 'đơn thành công',
+        text_rating: 'đánh giá'
+    },
+    createBasicProfile: {
+        your_expertise: 'Chuyên môn của bạn',
+        working_experenced: 'Kinh nghiệm làm việc',
+        position_working_expected: 'Vị trí làm việc mong muốn',
+        salary_position: 'Mức lương hiện tại (ngày)',
+        working_location: 'Khu vực làm việc mong muốn',
+        curent_workplace: 'Chỗ làm việc hiện tại',
+        text_place_holder: 'Click vào map sẽ trả về vị trí',
+        skills_personal: 'Kỹ năng sở trường',
+        text_attention: 'Chú ý: Đây là điểm cộng của bạn với nhà tuyển dụng',
+        post_portfolio_advanced: 'Tạo hồ sơ nâng cao',
+        post_portfolio_basic: 'Tạo hồ sơ cơ bản',
+        edit_portfolio_advanced: 'Cập nhật hồ sơ nâng cao',
+        edit_portfolio_basic: 'Cập nhật hồ sơ cơ bản',
+    },
+
+    createAdvancedProfile: {
+        text_image_product: 'Hình ảnh sản phẩm đã làm hoặc máy móc đã vận hành',
+        text_image_product_favorite: 'Hình ảnh sản phẩm sở trường',
+        text_image_product_technical_drawings: 'Hình ảnh bản vẽ kỹ thuật từng thi công',
+        text_ability_manager: 'Khả năng quản lý nhóm',
+        ability_to_increase_shifts: 'Khả năng tăng ca',
+        text_ability_work_far: 'Khả năng làm việc xa',
+        text_example: 'Ví dụ: Ngoài làm thợ mộc có thể làm thợ sơn PU, hoàn tất các công việc liên quan ...'
+    },
+
+    studentJobRecruitment: {
+        text_vacancies: 'Vị trí tuyển dụng',
+        text_placeholder_vancancies: 'Nhập vị trí tuyển dụng',
+        validate_vancancies: 'Vị trí tuyển dụng không được để trống',
+        text_work_location: 'Địa điểm làm việc',
+        text_click_map: 'Click vào Map sẽ trả về vị trí',
+        validate_map: 'Bạn phải chọn địa điểm làm việc',
+        text_level_wage: 'Mức lương (theo ngày)',
+        text_wage_agree: 'Lương thỏa thuận',
+        text_number_of_applications: 'Số lượng cần tuyển',
+        validate_number_of_applications: 'Số lượng cần tuyển không được để trống',
+        validate_number_of_applications_min: 'Số lượng cần tuyển tối thiểu là 1',
+        text_number_placeholder: 'Nhập số lượng cần tuyển',
+        text_experience_required: 'Yêu cầu kinh nghiệm',
+        text_experience_no_required: 'Không yêu cầu', 
+        text_working_time: 'Thời gian làm việc',
+        validate_time_sv: 'Thời gian làm việc không được để trống',
+        text_placeholder_time_working: 'Ca tối: 17h - 22h Thứ 2 - Thứ 7',
+        text_description_of_work: 'Mô tả chi tiết công việc',
+        validate_description: 'Mô tả chi tiết công việc không được để trống',
+        validate_description_number: 'Mô tả chi tiết công việc tối thiểu 100 ký tự',
+        text_description_work_holder: 'Ví dụ: Nhân viên bưng bê cafe',
+        text_picture_description: 'Hình ảnh mô tả',
+        text_video_description: 'Video mô tả',
+        text_post_news: 'Đăng tin' ,
+        text_tho: 'thợ',
+        text_sv: 'Sinh viên',
+        text_select_rank: 'Chọn cấp bậc cần tuyển',
+        text_time_tho: 'Thời gian thử việc',
+        text_support_tho: 'Chế độ hỗ trợ',
+        validate_support_tho: 'Chế độ hỗ trợ không được để trống',
+        text_placeholder_support_tho: 'Bao ăn ở và đi lại',
+        text_time_placeholder_tho: 'Nhập thời gian thử việc',
+        validate_time_tho: 'Thời gian thử việc không được để trống',
+        validate_time_number_tho: 'Thời gian thử việc tối thiểu 1 tháng, tối đa 12 tháng',
+        text_right_time_tho: 'tháng',
+        text_description_tho_holder:'Ví dụ: thi công biển hiệu quảng cáo...',
+        validate_image: 'Bạn phải tải lên tối thiểu 1 hình ảnh',
+        validate_video: 'Bạn phải tải lên video',
+        validate_service: 'Bạn phải chọn ngành nghề',
+        validate_service1: 'Bạn phải chọn chuyên môn',
+        text_update_new: 'Cập nhập',
+        text_post_news_done: 'Đăng tin thành công',
+        text_update_news_done: 'Cập nhập tin thành công',
+        text_post_news_err: 'Đăng tin thất bại',
+        text_update_news_err: 'Cập nhập tin thất bại',
+        hint_deadline_time: 'Hạn nộp hồ sơ',
+        hint_placeholder_deadline: 'Click vào để chọn',
+        validate_deadline_time: 'Bạn phải chọn hạn nộp hồ sơ'
+    },
+    listNewsRecruiment: {
+        text_edit_menu: 'Chỉnh sửa',
+        text_trash_menu: 'Xóa',
+    },
+    doyouknow: {
+        text_question: 'Bạn có biết?',
+        label_detail: 'Xem chi tiết'
+
+    },
+    Candidate: {
+        text_date_time: 'Cập nhật:',
+        text_current_level: 'năm',
+        msg_save_profile_success: 'Lưu hồ sơ thành công',
+        msg_save_profile_failure: 'Lưu hồ sơ thất bại',
+        msg_remove_profile_success: 'Bỏ lưu hồ sơ thành công',
+        msg_remove_profile_failure: 'Bỏ lưu hồ sơ thất bại',
+        hint_empty_result_search: 'Không có kết quả tìm kiếm'
+    },
+    detailProfile: {
+        text_header: 'Chi tiết hồ sơ',
+        label_desired_position: 'Vị trí mong muốn:',
+        label_current_level: 'Cấp bậc hiện tại:',
+        label_desired_level: 'Cấp bậc mong muốn:',
+        label_service: 'Chuyên môn của bạn:',
+        label_curent_place: 'Địa điểm làm việc hiện tại:',
+        label_desired_place: 'Địa điểm làm việc mong muốn:',
+        label_years_of_experience: 'Số năm kinh nghiệm:',
+        label_desired_salary: 'Lương mong muốn:',
+        label_ability_overtime: 'Khả năng tăng ca:',
+        label_team_manage: 'Khả năng quản lý nhóm:',
+        label_on_site: 'Khả năng công tác xa:',
+        label_kill: 'Kỹ năng sở trường:',
+        label_button: 'Xem trang cá nhân',
+        label_updated_day: 'Cập nhật:',
+        text_email: 'Email:',
+        text_phone: 'SĐT:',
+        text_address: 'Địa chỉ:',
+
+        text_header: 'Chi tiết hồ sơ'
+    },
+    infoRecruiment: {
+        text_level_wage: 'Mức lương theo ngày: ',
+        text_exp: 'Kinh nghiệm:',
+        text_probationary_period: 'Thời gian thử việc:',
+        text_number_of_recruitment: 'Số lượng cần tuyển:',
+        text_level_recuriment: 'Cấp bậc cần tuyển:',
+        text_address_work: 'Địa điểm làm việc:',
+        text_regime: 'Chế độ:',
+        text_job_description: 'Mô tả công việc',
+        text_btn_right: 'Xem chi tiết nhà tuyển dụng',
+        text_btn_left: 'Gọi ngay',
+        text_save_job: 'Lưu việc',
+        text_share: 'Chia sẻ',
+        text_deadline: 'Hết hạn: ',
+        text_btn_save_job: 'Lưu việc thành công', 
+        text_month: 'tháng',
+        text_time_work: 'Thời gian làm việc:'
+    },
+    searchFilter: {
+        text_wage: 'Khoảng lương (theo ngày)', 
+        text_address: 'Địa điểm',
+        text_career: 'Ngành nghề',
+        text_reset: 'Thiết lập lại',
+        text_done: 'Xác nhận',
+        text_select_service: 'Chọn dịch vụ',
+        text_hint_service: 'Dịch vụ',
+        msg_select_at_least: 'Vui lòng chọn ít nhất 1 thông tin cần lọc',
+        title_filter_results: 'Kết quả tìm kiếm'
+    },
+    recruiterList: {
+        text_filter_sv: 'Tìm sinh viên',
+        text_filter_tho: 'Tìm thợ mộc',
+        text_need_to_recruit: 'Cần tuyển:',
+        text_wage: 'Lương:',
+        text_wage_agree: 'Lương: Thỏa thuận',
+        text_content: 'Nội dung:',
+        text_wage_agree_: 'Thỏa thuận',
+        text_deadline: 'Hạn nộp hồ sơ: ',
+        distance_from_you: 'Khoảng cách:',
+        text_no_news_recruiment: 'Không có tin tuyển dụng nào',
+        text_delete_new_job_done: 'Xóa tin tuyển dụng thành công',
+        text_delete_new_job_err: 'Chưa xóa được tin tuyển dụng',
+    },
+    conctactPage: {
+        text_follow: 'Theo dõi',
+        text_project: 'Dự án',
+        text_rating: 'đánh giá'
+    },
+    saveJob: {
+        text_header_save_job: 'Công việc đã lưu',
+        text_header_save_profile: 'Hồ sơ đã lưu',
+        text_no_job_save: 'Chưa có công việc nào được lưu',
+        text_delete_job_done: 'Xóa việc thành công',
+        text_delete_job_err: 'Xóa việc thất bại',
+
+    },
+    saveProfile: {
+        text_update_at: 'Cập nhật:',
+        text_list_profile: 'Danh sách hồ sơ của tôi',
+        text_not_profile: 'Bạn không có hồ sơ nào'
+    },
+
+    personPage: {
+        text_gender: 'Giới tính:',
+        text_email: 'Email:',
+        text_telephone: 'SĐT:',
+        text_address: 'Địa chỉ:',
+        text_list_profile: 'Danh sách hồ sơ',
+        text_update_at: 'Thời gian tạo:',
+        text_feedback: 'Bình luận',
+    },
+
+    callNow: {
+        text_call_point_not_enough: 'Bạn không đủ điểm để thực hiện cuộc gọi này'
+    },
+    profileOfMe: {
+        text_header: 'Hồ sơ của tôi',
+        text_no_news_profile: 'Bạn không có hồ sơ nào',
+        text_delete_new_profile_done: 'Xóa hồ sơ thành công',
+        text_delete_new_profile_err: 'Chưa xóa được hồ sơ'
+    },
+    feedback: {
+        msg_send_feedback_success: 'Bình luận thành công',
+        msg_send_feedback_fail: 'Bình luận không thành công',
+        text_feed_back: 'Chạm vào một Ngôi sao để đánh giá',
+        text_placeholder: 'Viết nhận xét...',
+        label_send_feedback: 'Gửi đánh giá',
+        msg_star_empty: 'Số sao không được để trống',
+        msg_commentr_empty: 'Bình luận không được để trống',
+        text_project: 'Từ dự án:',
+        text_feedback_empty:'Không có bình luận nào'
+    }, 
+    camera: {
+        title: 'Lựa chọn hình ảnh',
+        takePhotoButtonTitle: 'Chụp ảnh từ camera',
+        chooseFromLibraryButtonTitle: 'Chọn ảnh từ thư viện',
+        cancelButtonTitle: 'Bỏ qua'
+    },
+
+    updateUser: {
+        msg_update_user_success: 'Cập nhật thông tin người dùng thành công',
+        msg_email_not_empty: 'Email không được để trống',
+        msg_gender_not_empty: 'Giới tính không được để trống',
+        msg_place_not_empty: 'Địa điểm không được để trống',
+    },
+    editProfile: {
+        hint_fullname: 'Họ và tên',
+        hint_phone: 'Số điện thoại',
+        hint_email: 'Email',
+        hint_gender: 'Giới tính',
+    }
+    
+
+
+}
+export default strings;
